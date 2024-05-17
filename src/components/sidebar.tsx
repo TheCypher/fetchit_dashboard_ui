@@ -28,7 +28,6 @@ import {
 } from "./ui/dropdown-menu";
 import { TrashIcon } from "@radix-ui/react-icons";
 import { useRouter } from "next/navigation";
-
 interface SidebarProps {
   isCollapsed: boolean;
   messages: Message[];
@@ -107,9 +106,19 @@ export function Sidebar({
   return (
     <div
       data-collapsed={isCollapsed}
-      className="relative justify-between group lg:bg-accent/20 lg:dark:bg-card/35 flex flex-col h-full gap-4 p-2 data-[collapsed=true]:p-2 "
+      className="relative justify-between group flex flex-col h-full gap-4 p-2 data-[collapsed=true]:p-2 bg-[#F0F1F5] lg:bg-[#F0F1F5] text-black"
     >
-      <div className=" flex flex-col justify-between p-2 max-h-fit overflow-y-auto">
+      <div className="border-b border-[#C3C9F4] flex flex-col items-center justify-center">
+        {/* section 1 */}
+        <Image src="/sidebarLogo.png" alt="AI" width={197.19} height={56.48} />
+        <button className="w-[250px] flex items-center justify-center px-6 py-2 bg-[#5661F6] text-white rounded-md shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 mt-4 mb-4" >
+          <span className="mr-2">+</span> New chat
+        </button>
+      </div>
+
+      <div className="border-b border-[#C3C9F4]">Your Conversations </div>
+      <div className="">section 3</div>
+      {/* <div className=" flex flex-col justify-between p-2 max-h-fit overflow-y-auto">
         <Button
           onClick={() => {
             router.push("/");
@@ -212,7 +221,7 @@ export function Sidebar({
 
       <div className="justify-end px-2 py-2 w-full border-t">
         <UserSettings />
-      </div>
+      </div> */}
     </div>
   );
 }
