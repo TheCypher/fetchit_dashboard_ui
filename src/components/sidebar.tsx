@@ -106,31 +106,28 @@ export function Sidebar({
   return (
     <div
       data-collapsed={isCollapsed}
-      className="relative justify-between group flex flex-col h-full gap-4 p-2 data-[collapsed=true]:p-2 bg-[#F0F1F5] lg:bg-[#F0F1F5] text-black"
+      className="relative justify-between group flex flex-col h-full gap-4 py-4 data-[collapsed=true]:py-4 bg-[#F0F1F5] lg:bg-[#F0F1F5] text-black w-[400px]"
     >
-      <div className="border-b border-[#C3C9F4] flex flex-col items-center justify-center">
+      <div className="flex flex-col items-center justify-center">
         {/*  div container for placing logo and text side by side*/}
         <div className="relative flex items-center">
           <div className="flex items-center">
             <Image src="/fetchit.png" alt="AI" width={50} height={50} />
-            <span
-              className="font-inter font-bold text-[#3E4EA1] ml-1 "
-              style={{
-                fontSize: "37.4051px",
-                lineHeight: "50px",
-                letterSpacing: "1.66245px",
-              }}
-            >
+            <span className="font-inter font-bold text-[#3E4EA1] ml-1 text-[37px] leading-[50px] tracking-wider">
               Fetchit
             </span>
           </div>
         </div>
-        <button className="w-[200px] flex items-center justify-center px-6 py-2 bg-[#5661F6] text-white rounded-sm shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 mt-4 mb-4">
+        <button className="w-[250px] flex items-center justify-center px-6 py-2 bg-[#5661F6] text-white rounded-sm shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 mt-4 mb-4">
           <span className="mr-2">+</span> New chat
         </button>
+        <div className="w-full mt-1 border-t border-[#C3C9F4]"></div>
       </div>
 
-      <div className="border-b border-[#C3C9F4]">Your Conversations </div>
+      <div className="bg-[#555555]">
+        Your Conversations
+        <div className="w-full mt-1 border-t border-[#C3C9F4]"></div>
+      </div>
       <div className="">section 3</div>
       {/* <div className=" flex flex-col justify-between p-2 max-h-fit overflow-y-auto">
         <Button
