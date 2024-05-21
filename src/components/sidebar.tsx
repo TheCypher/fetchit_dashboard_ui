@@ -166,13 +166,41 @@ export function Sidebar({
       </div>
       <div className="w-full mt-1 border-t border-[#C3C9F4]"></div>
 
-      {/* section 2 */}
-      {/* <div className="">
-        Your Conversations
-        <div className="w-full mt-1 border-t border-[#C3C9F4]"></div>
-      </div> */}
       {/* section 3 */}
-      <div className="">section 3</div>
+      <div className="">
+        <div className="p-4 max-w-md mx-auto bg-gray-100">
+          <div className="mb-4">
+            <div className="flex items-center space-x-2">
+              <span className="text-blue-500">✨</span>
+              <div>
+                <h2 className="text-lg">Upgrade To Try Pro</h2>
+                <p className="text-gray-500 text-sm">
+                  Higher Accuracy, Smarter AI And More!
+                </p>
+              </div>
+            </div>
+            <button className="mt-3 px-4 py-2 bg-[#C3C9F4] text-blue-700 rounded-full hover:bg-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+              Learn More
+            </button>
+          </div>
+
+          <div className="space-y-3">
+            <div className="flex items-center p-3 border border-[#6679BF] rounded-full">
+              <span className="mr-3 text-blue-500">📅</span>
+              <span>Calendar</span>
+            </div>
+            <div className="flex items-center p-3 border border-[#6679BF] rounded-full">
+              <span className="mr-3 text-blue-500">⚙️</span>
+              <span>Settings</span>
+            </div>
+            <div className="flex items-center p-3 border border-[#6679BF] rounded-full">
+              <Image src="/profile.png" width={20} height={20} alt="User" className="rounded-full mr-3"/>
+              <span>Michael Davis</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* <div className=" flex flex-col justify-between p-2 max-h-fit overflow-y-auto">
         <Button
           onClick={() => {
