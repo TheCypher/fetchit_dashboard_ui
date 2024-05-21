@@ -106,9 +106,10 @@ export function Sidebar({
   return (
     <div
       data-collapsed={isCollapsed}
-      className="relative justify-between group flex flex-col h-full gap-4 py-4 data-[collapsed=true]:py-4 bg-[#F0F1F5] lg:bg-[#F0F1F5] text-black w-[400px]"
+      className="relative group flex flex-col h-full gap-4 py-2 data-[collapsed=true]:py-2 bg-[#F0F1F5] lg:bg-[#F0F1F5] text-black w-[400px]"
     >
-      <div className="flex flex-col items-center justify-center">
+      {/* section 1 */}
+      <div className="flex flex-col items-center justify-center ">
         {/*  div container for placing logo and text side by side*/}
         <div className="relative flex items-center">
           <div className="flex items-center">
@@ -118,16 +119,59 @@ export function Sidebar({
             </span>
           </div>
         </div>
-        <button className="w-[250px] flex items-center justify-center px-6 py-2 bg-[#5661F6] text-white rounded-sm shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 mt-4 mb-4">
+        <button className="w-[250px] flex items-center justify-center px-6 py-2 bg-[#5661F6] text-white rounded-sm -md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 mt-4 mb-4">
           <span className="mr-2">+</span> New chat
         </button>
         <div className="w-full mt-1 border-t border-[#C3C9F4]"></div>
       </div>
 
-      <div className="bg-[#555555]">
+      <div className="p-4 w-full max-w-md mx-auto">
+        <div className="flex justify-between items-center pb-2">
+          <h2 className="text-gray-600">Your Conversations</h2>
+          <a href="#" className="text-[#5661F6]">
+            Clear All
+          </a>
+        </div>
+        <ul className="mt-4 space-y-2">
+          <li className="flex justify-between items-center py-2 px-3  rounded ">
+            <span>Create Html Game Environme...</span>
+          </li>
+          <li className="flex justify-between items-center py-2 px-3  rounded ">
+            <span>Factor X^100-1</span>
+          </li>
+          <li className="flex justify-between items-center py-2 px-3  rounded ">
+            <span>What Is UI UX Design?</span>
+          </li>
+          <li className="flex justify-between items-center py-2 px-3  rounded ">
+            <span>What Is The Thyroid Gland?</span>
+          </li>
+          <li className="flex justify-between items-center py-2 px-3  rounded ">
+            <span>What Are The Effects...?</span>
+          </li>
+          <li className="flex justify-between items-center py-2 px-3 bg-[#E0E7FF] rounded ">
+            <span className="text-[#5661F6]">Who Is George Washing...?</span>
+            <div className="flex space-x-2">
+              <button className="text-gray-500 hover:text-gray-700">
+                <Trash2 className="shrink-0 w-4 h-4" />
+              </button>
+              <button className="text-gray-500 hover:text-gray-700">
+                <SquarePen size={18} className="shrink-0 w-4 h-4" />
+              </button>
+            </div>
+          </li>
+          <li className="flex justify-between items-center py-2 px-3 rounded ">
+            <span>How Chat GPT Work?</span>
+          </li>
+        </ul>
+      </div>
+      <div className="w-full mt-1 border-t border-[#C3C9F4]"></div>
+
+      {/* section 2 */}
+      {/* <div className="">
         Your Conversations
         <div className="w-full mt-1 border-t border-[#C3C9F4]"></div>
-      </div>
+      </div> */}
+      {/* section 3 */}
       <div className="">section 3</div>
       {/* <div className=" flex flex-col justify-between p-2 max-h-fit overflow-y-auto">
         <Button
