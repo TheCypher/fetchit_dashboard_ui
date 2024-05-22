@@ -37,6 +37,19 @@ interface SidebarProps {
   setMessages: (messages: Message[]) => void;
 }
 
+export type ListItemType = {
+  id: number;
+  text: string;
+};
+
+interface Item {
+  text: string;
+}
+
+interface ListComponentProps {
+  items: Item[];
+}
+
 export function Sidebar({
   messages,
   isCollapsed,
@@ -103,6 +116,18 @@ export function Sidebar({
     setLocalChats(getLocalstorageChats());
   };
 
+  const [hoverIndex, setHoverIndex] = useState<number | null>(null);
+
+  const items: ListItemType[] = [
+    { id: 1, text: "Create Html Game Environment..." },
+    { id: 2, text: "Factor X^100-1" },
+    { id: 3, text: "What Is UI UX Design?" },
+    { id: 4, text: "What Is The Thyroid Gland?" },
+    { id: 5, text: "What Are The Effects...?" },
+    { id: 6, text: "Who Is George Washington...?" },
+    { id: 7, text: "How Chat GPT Work?" },
+  ];
+
   return (
     <div
       data-collapsed={isCollapsed}
@@ -131,35 +156,30 @@ export function Sidebar({
           </a>
         </div>
         <ul className="mt-4 space-y-2">
-          <li className="flex justify-between items-center py-2 px-3  rounded ">
-            <span>Create Html Game Environme...</span>
-          </li>
-          <li className="flex justify-between items-center py-2 px-3  rounded ">
-            <span>Factor X^100-1</span>
-          </li>
-          <li className="flex justify-between items-center py-2 px-3  rounded ">
-            <span>What Is UI UX Design?</span>
-          </li>
-          <li className="flex justify-between items-center py-2 px-3  rounded ">
-            <span>What Is The Thyroid Gland?</span>
-          </li>
-          <li className="flex justify-between items-center py-2 px-3  rounded ">
-            <span>What Are The Effects...?</span>
-          </li>
-          <li className="flex justify-between items-center py-2 px-3 bg-[#E0E7FF] rounded ">
-            <span className="text-[#5661F6]">Who Is George Washing...?</span>
-            <div className="flex space-x-2">
-              <button className="text-gray-500 hover:text-gray-700">
-                <Trash2 className="shrink-0 w-4 h-4" />
-              </button>
-              <button className="text-gray-500 hover:text-gray-700">
-                <SquarePen size={18} className="shrink-0 w-4 h-4" />
-              </button>
-            </div>
-          </li>
-          <li className="flex justify-between items-center py-2 px-3 rounded ">
-            <span>How Chat GPT Work?</span>
-          </li>
+          {items.map((item, idx) => (
+            <li
+              key={idx}
+              onMouseEnter={() => setHoverIndex(idx)}
+              onMouseLeave={() => setHoverIndex(null)}
+              className="flex justify-between items-center py-2 px-3 rounded hover:bg-[#E0E7FF]"
+            >
+              <span className="text-black">{item.text}</span>
+              <div
+                className="flex space-x-2"
+                style={{
+                  opacity: hoverIndex === idx ? 1 : 0,
+                  transition: "opacity 200ms ease-in-out",
+                }}
+              >
+                <button className="text-gray-500 mr-2 hover:bg-gray-300">
+                  <Trash2 className="shrink w-4 h-4" />
+                </button>
+                <button className="text-gray-500 hover:bg-gray-300">
+                  <SquarePen size={18} className="shrink w-4 h-4" />
+                </button>
+              </div>
+            </li>
+          ))}
         </ul>
       </div>
       <div className="w-full border-t border-[#C3C9F4]"></div>
