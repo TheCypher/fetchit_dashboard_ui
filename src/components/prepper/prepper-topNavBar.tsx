@@ -20,7 +20,7 @@ export function TopNav() {
           <Plus size={20} className="shrink w-6 h-6" />
 
           <span className="font-bold">Create new</span>
-          <span className="bg-purple-700 text-xs px-3 py-1 rounded ">AI</span>
+          <span className="bg-purple-700 text-xs px-3 py-1 rounded font-bold">AI</span>
         </button>
         <div className="relative">
           <button className="bg-white text-black-700 px-4 py-2 rounded border border-gray-300 flex items-center">
