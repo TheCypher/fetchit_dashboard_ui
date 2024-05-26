@@ -48,7 +48,7 @@ const BottomNav: React.FC<BottomNavProps> = ({ isGridView, setIsGridView }) => {
           <button
             className={`flex items-center text-purple-700 px-3 py-1 rounded ${
               isGridView ? "bg-white" : "bg-gray-300"
-            } hover:${isGridView ? "bg-white" : "bg-purple-100"}`}
+            } `}
             onClick={() => setIsGridView(true)}
           >
             <LayoutGrid size={20} className="shrink w-6 h-6" />
@@ -57,7 +57,7 @@ const BottomNav: React.FC<BottomNavProps> = ({ isGridView, setIsGridView }) => {
           <button
             className={`flex items-center text-purple-700 px-3 py-1 ml-1 rounded ${
               !isGridView ? "bg-white" : "bg-gray-300"
-            } hover:${!isGridView ? "bg-white" : "bg-purple-100"}`}
+            }`}
             onClick={() => setIsGridView(false)}
           >
             <List size={20} className="shrink w-6 h-6" />
