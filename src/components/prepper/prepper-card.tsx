@@ -4,7 +4,7 @@ import { Lock } from "lucide-react";
 
 export function Card() {
   return (
-    <div className="w-[300px] rounded overflow-hidden shadow-lg bg-white">
+    <div className="w-[250px] rounded overflow-hidden shadow-lg bg-white">
       <div className="relative w-full h-48">
         <Image
           src="/user.jpg"

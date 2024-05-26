@@ -8,7 +8,7 @@ import {
 
 export function TopNav() {
   return (
-    <div className="w-[80%] inline-block items-center justify-between p-4">
+    <div className="w-[80%] inline-block items-center justify-between pl-0" >
       <div className="flex pb-2 items-center space-x-2">
         <div className="flex items-center space-x-1">
           <GalleryVerticalEnd size={20} className="shrink w-6 h-6" />
