@@ -1,7 +1,7 @@
 "use client";
 import { Card } from "./prepper-card";
-import { BottomNav } from "./prepper-bottomNavBar";
-
+import { Star } from "lucide-react";
+import Image from "next/image";
 interface GridProps {
   isGridView: boolean;
 }
@@ -14,9 +14,22 @@ interface ListItemProps {
   creatorImage: string;
 }
 
-
 const Grid: React.FC<GridProps> = ({ isGridView }) => {
   const items: ListItemProps[] = [
+    {
+      title: "Gamma Tips & Tricks",
+      folder: "Private",
+      lastViewed: "1 day ago",
+      creator: "Mohammad Farazuddin",
+      creatorImage: "/path/to/image.jpg", // Replace with the actual path to the image
+    },
+    {
+      title: "Gamma Tips & Tricks",
+      folder: "Private",
+      lastViewed: "1 day ago",
+      creator: "Mohammad Farazuddin",
+      creatorImage: "/path/to/image.jpg", // Replace with the actual path to the image
+    },
     {
       title: "Gamma Tips & Tricks",
       folder: "Private",
@@ -45,8 +58,9 @@ const Grid: React.FC<GridProps> = ({ isGridView }) => {
           <Card />
         </div>
       ) : (
-        <div className="w-[100%] flex flex-col w-full max-w-4xl mx-auto mt-10">
+        <div className="w-[100%] flex flex-col w-full">
           <div className="flex items-center justify-between py-2 px-4 border-b text-gray-500 text-sm">
+            <div className="w-12 mr-10"></div>
             <div className="flex-1">Title</div>
             <div className="flex-1 text-center">Folders</div>
             <div className="flex-1 text-right">Last viewed</div>
@@ -57,8 +71,10 @@ const Grid: React.FC<GridProps> = ({ isGridView }) => {
               key={index}
               className="flex items-center justify-between py-4 px-4 border-b hover:bg-gray-100"
             >
-              <div className="flex-1 flex items-center">
-                <span className="mr-2">⭐️</span>
+              <div className="w-12 flex justify-center mr-10">
+                <Star size={20} className="shrink w-6 h-6" />
+              </div>
+              <div className="flex-1 flex items-right">
                 <span>{item.title}</span>
               </div>
               <div className="flex-1 text-center">
@@ -68,10 +84,12 @@ const Grid: React.FC<GridProps> = ({ isGridView }) => {
               </div>
               <div className="flex-1 text-right">{item.lastViewed}</div>
               <div className="flex-1 text-right flex items-center justify-end">
-                <img
-                  src={item.creatorImage}
-                  alt={item.creator}
-                  className="w-6 h-6 rounded-full mr-2"
+                <Image
+                  src="/profile.png"
+                  width={20}
+                  height={20}
+                  alt="User"
+                  className="rounded-full mr-3"
                 />
                 <span>{item.creator}</span>
               </div>
